@@ -1,0 +1,48 @@
+!DOCTYPE html
+html lang=en
+head
+  meta charset=UTF-8
+  titleMy Gametitle
+  style
+     CSS goes here 
+    body {
+      margin 0;
+      background #000;
+      display flex;
+      justify-content center;
+      align-items center;
+      height 100vh;
+      overflow hidden;
+    }
+    canvas {
+      border 2px solid #fff;
+    }
+  style
+head
+body
+  canvas id=gameCanvas width=800 height=600canvas
+  script
+     JavaScript goes here
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+     Example simple animation
+    let x = 50;
+    let y = 50;
+    let dx = 2;
+    let dy = 2;
+
+    function animate() {
+      ctx.fillStyle = #000;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = #f00;
+      ctx.fillRect(x, y, 50, 50);
+
+      x += dx;
+      y += dy;
+
+      if (x + 50  canvas.width  x  0) dx = -dx;
+      if (y + 50  canvas.height  y  0) dy = -dy;
+
+      requestAnimationFrame(animate)
